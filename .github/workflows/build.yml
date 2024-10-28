@@ -4,6 +4,7 @@ on:
     # Only run on branches
     branches:
     - '**'
+  workflow_dispatch:
 
 jobs:
 
