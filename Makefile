@@ -61,7 +61,12 @@ ifeq ($(DEBUG),YES)
 cflags += -g -Og
 cppflags += -DENABLE_PLAYBACK_SWITCH
 else
+ifeq ($(SYSTEM),WINDOWS)
+# Try different optimization profile on Windows to see if that helps with the false virus checker positive
+cflags += -Oz
+else
 cflags += -O2
+endif
 endif
 
 # Add user-provided flags.
